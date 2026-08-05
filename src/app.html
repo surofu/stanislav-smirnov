@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru-RU">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<meta name="theme-color" content="#fcfdfe" media="(prefers-color-scheme: light)" />
+		<meta name="theme-color" content="#0b0f14" media="(prefers-color-scheme: dark)" />
+		<meta name="robots" content="index, follow" />
+		<meta
+			name="description"
+			content="Разработка сайтов, интернет-магазинов, CRM и Telegram-ботов от 100 BYN. Работаю напрямую, без посредников — от заявки до запуска."
+		/>
+		<title>Сайты и сервисы от 100 BYN</title>
+
+		<!--
+        Иконки лежат в /static — отдаются как есть, без обработки Vite.
+        favicon.svg умеет prefers-color-scheme (см. static/favicon.svg), поэтому он первым
+        после PNG-фолбэка: браузеры, поддерживающие type="image/svg+xml", возьмут именно его.
+    -->
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="shortcut icon" href="/favicon.svg" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<meta name="apple-mobile-web-app-title" content="Stanislav" />
+		<link rel="manifest" href="/site.webmanifest" />
+
+		<!--
+        Ставим класс .dark ДО первой отрисовки, чтобы не было "мигания" светлой темой
+        при загрузке (FOUC). Синхронный inline-скрипт — намеренно, без задержек на бандл.
+    -->
+		<script>
+			(function () {
+				try {
+					var stored = localStorage.getItem('theme');
+					var dark = stored
+						? stored === 'dark'
+						: window.matchMedia('(prefers-color-scheme: dark)').matches;
+					document.documentElement.classList.toggle('dark', dark);
+				} catch (e) {
+					/* localStorage/matchMedia недоступны — остаёмся на светлой теме по умолчанию */
+				}
+			})();
+		</script>
+
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>

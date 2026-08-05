@@ -1,0 +1,93 @@
+<script lang="ts">
+	import { resolve } from '$app/paths';
+
+	type RoutePath = Parameters<typeof resolve>[0];
+
+	interface NavItem {
+		label: string;
+		href: RoutePath;
+	}
+
+	interface SocialLink {
+		label: string;
+		icon: string;
+		href: string;
+	}
+
+	const navItems: NavItem[] = [
+		{ label: 'Главная', href: '/' },
+		{ label: 'Блог', href: '/blog' },
+		{ label: 'Проекты', href: '/projects' },
+		{ label: 'Контакты', href: '/contacts' }
+	];
+
+	const socialLinks: SocialLink[] = [
+		{ label: 'Email', icon: '/icon/gmail.svg', href: 'mailto:stanislavsmwork@gmail.com' },
+		{ label: 'Telegram', icon: '/icon/telegram.svg', href: 'https://t.me/smstanislav' },
+		{ label: 'LinkedIn', icon: '/icon/linkedin.svg', href: 'https://linkedin.com/in/surofu' },
+		{ label: 'GitHub', icon: '/icon/github.svg', href: 'https://github.com/surofu' },
+	];
+
+	const year = new Date().getFullYear();
+</script>
+
+<footer
+	class="w-full border-t border-slate-200 bg-primary-bg shadow-[0_-3px_10px_rgba(0,0,0,0.1)] dark:border-slate-700"
+>
+	<div
+		class="app-container flex flex-col gap-8 px-4 py-10 sm:flex-row sm:justify-between sm:gap-10 sm:px-8 sm:py-12"
+	>
+		<div class="max-w-sm">
+			<p class="text-sm text-secondary">
+				Разработка сайтов, CRM и Telegram-ботов для бизнеса и частных специалистов — от заявки до
+				запуска без посредников.
+			</p>
+		</div>
+
+		<nav class="flex flex-col gap-2 text-sm">
+			<span class="font-medium text-primary">Навигация</span>
+			{#each navItems as item (item.href)}
+				<a href={resolve(item.href)} class="text-secondary transition-colors hover:text-accent">
+					{item.label}
+				</a>
+			{/each}
+		</nav>
+
+		<div class="flex flex-col gap-3">
+			<span class="text-sm font-medium text-primary">Связаться</span>
+			<div class="flex flex-wrap gap-3">
+				{#each socialLinks as social (social.label)}
+					<a
+						href={social.href}
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label={social.label}
+						class="group flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-primary-bg transition-transform hover:-translate-y-0.5 dark:border-slate-700"
+					>
+						<span
+							class="h-4 w-4 shrink-0 bg-secondary-light transition-colors group-hover:bg-accent"
+							style="
+								mask-image: url('{social.icon}');
+								mask-size: contain;
+								mask-repeat: no-repeat;
+								mask-position: center;
+								-webkit-mask-image: url('{social.icon}');
+								-webkit-mask-size: contain;
+								-webkit-mask-repeat: no-repeat;
+								-webkit-mask-position: center;
+							"
+						></span>
+					</a>
+				{/each}
+			</div>
+		</div>
+	</div>
+
+	<div class="border-t border-slate-200 dark:border-slate-700">
+		<div
+			class="app-container flex flex-col gap-2 px-4 py-4 text-xs text-secondary sm:flex-row sm:justify-between sm:px-8"
+		>
+			<span>© {year} Stanislav Smirnov. Все права защищены.</span>
+		</div>
+	</div>
+</footer>
