@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import logo from '$lib/assets/favicon.svg';
-	import type { RouteId } from '$app/types';
+	import type { RouteId, ResolvedPathname } from '$app/types';
 
 	type StaticRouteId = Exclude<RouteId, `${string}[${string}`>;
 
@@ -60,7 +60,7 @@
 			<div class="flex flex-wrap gap-3">
 				{#each socialLinks as social (social.label)}
 				    <a
-						href={social.href}
+						href={social.href as ResolvedPathname}
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label={social.label}
@@ -84,9 +84,9 @@
 			</div>
 		</div>
 	</div>
-	<div class="border-t border-slate-200 dark:border-slate-700">
+	<div>
 		<div
-			class="app-container flex flex-col gap-2 px-4 py-4 text-xs text-secondary sm:flex-row sm:justify-between sm:px-8"
+			class="app-container flex flex-col gap-2 px-4 pb-10 text-xs text-secondary sm:flex-row sm:justify-between sm:px-8"
 		>
 			<span>© {year} Stanislav Smirnov. Все права защищены.</span>
 		</div>

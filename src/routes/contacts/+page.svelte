@@ -1,6 +1,8 @@
 <!-- eslint-disable svelte/no-inner-declarations, svelte/valid-compile -->
 <script lang="ts">
+	import type { ResolvedPathname } from '$app/types';
 	import { Seo } from '$lib';
+	import GridDots from '$lib/components/GridDots.svelte';
 
 	interface ContactLink {
 		label: string;
@@ -49,10 +51,10 @@
 			{#each contacts as contact (contact.label)}
 				<li>
 					<a
-						href={contact.href}
+						href={contact.href as ResolvedPathname}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="group flex items-center gap-4 rounded-md px-2 py-3 transition-colors hover:bg-accent/10"
+						class="group flex items-center gap-4 rounded-md px-4 py-3 transition-colors hover:bg-accent/10"
 					>
 						<span
 							class="h-5 w-5 shrink-0 bg-secondary-light transition-colors group-hover:bg-accent"
@@ -79,3 +81,5 @@
 		</ul>
 	</div>
 </section>
+
+<GridDots />
