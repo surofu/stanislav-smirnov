@@ -11,13 +11,11 @@
 	}
 
 	const homeItem: NavItem = { label: 'Главная', href: '/' };
-
 	const navItems: NavItem[] = [
 		{ label: 'Блог', href: '/blog' },
 		{ label: 'Проекты', href: '/projects' },
 		{ label: 'Контакты', href: '/contacts' }
 	];
-
 	const allItems = [homeItem, ...navItems];
 
 	let linkEls: Record<string, HTMLAnchorElement> = {};
@@ -25,14 +23,18 @@
 	let indicatorWidth = $state(0);
 	let ready = $state(false);
 	let mobileOpen = $state(false);
-
 	let pathname = $derived(page.url.pathname);
 
+	function isActive(href: StaticRouteId) {
+		const resolved = resolve(href);
+		if (href === '/') return pathname === resolved;
+		return pathname === resolved || pathname.startsWith(`${resolved}/`);
+	}
+
 	function updateIndicator() {
-		const active = allItems.find((item) => resolve(item.href) === pathname) ?? homeItem;
+		const active = allItems.find((item) => isActive(item.href)) ?? homeItem;
 		const el = linkEls[active.href];
 		if (!el) return;
-
 		indicatorLeft = el.offsetLeft;
 		indicatorWidth = el.offsetWidth;
 		ready = true;
@@ -51,20 +53,16 @@
 <svelte:window onresize={updateIndicator} />
 
 <div class="relative flex items-center justify-between gap-4">
-	<!-- Десктоп-навигация -->
 	<nav class="relative hidden flex-1 items-center gap-4 sm:flex">
 		<span
 			class="absolute -bottom-px h-0.5 bg-accent transition-all duration-300 ease-out"
 			class:opacity-0={!ready}
 			style="left: {indicatorLeft}px; width: {indicatorWidth}px;"
 		></span>
-
 		<a href={resolve(homeItem.href)} bind:this={linkEls[homeItem.href]} class="text-nowrap">
 			{homeItem.label}
 		</a>
-
 		<span class="w-full"></span>
-
 		{#each navItems as item (item.href)}
 			<a href={resolve(item.href)} bind:this={linkEls[item.href]} class="text-nowrap">
 				{item.label}
@@ -72,14 +70,12 @@
 		{/each}
 	</nav>
 
-	<!-- Заголовок на мобильных (десктоп-нав скрыта) -->
 	<a href={resolve(homeItem.href)} class="text-nowrap sm:hidden">
 		{homeItem.label}
 	</a>
 
 	<div class="flex items-center gap-2">
 		<ThemeToggle />
-
 		<button
 			type="button"
 			class="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-primary sm:hidden dark:border-slate-700"
@@ -110,10 +106,10 @@
 		class="mt-4 flex flex-col gap-3 border-t border-slate-200 pt-4 sm:hidden dark:border-slate-700"
 	>
 		{#each allItems as item (item.href)}
-			<a
+		    <a
 				href={resolve(item.href)}
 				class="text-secondary transition-colors hover:text-accent"
-				class:text-accent={resolve(item.href) === pathname}
+				class:text-accent={isActive(item.href)}
 			>
 				{item.label}
 			</a>

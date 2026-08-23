@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { Seo } from '$lib';
-	import { PostContent } from '$lib';
+	import { Seo, PostContent } from '$lib';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();

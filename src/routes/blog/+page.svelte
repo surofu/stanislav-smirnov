@@ -17,24 +17,26 @@
 	description="Заметки о разработке на Kotlin, Spring Boot и SvelteKit — архитектура, продакшн-практики, разбор технических решений."
 />
 
-<section>
+<section class="mx-auto max-w-2xl">
+	<h1 class="text-2xl font-semibold text-primary">Блог</h1>
+	<p class="mt-2 text-secondary">Заметки о бэкенде, фронтенде и продакшн-практиках.</p>
+
 	{#if data.posts.length === 0}
-		<p class="text-secondary">Пока нет ни одного поста — загляните позже.</p>
+		<p class="mt-12 text-secondary">Пока нет ни одного поста — загляните позже.</p>
 	{:else}
-		<ul class="flex flex-col gap-6">
+		<ul class="mt-10 divide-y divide-slate-200 dark:divide-slate-800">
 			{#each data.posts as post (post.slug)}
 				<li>
-					<a
-						href={resolve('/blog/[slug]', { slug: post.slug })}
-						class="group block rounded-lg bg-primary-bg border border-slate-200 dark:border-slate-700 p-6 backdrop-blur-xs shadow-lg"
-					>
-						<span class="text-sm font-medium text-accent">
+					<a href={resolve('/blog/[slug]', { slug: post.slug })} class="group flex flex-col gap-1 py-5">
+						<span class="text-xs text-secondary-light">
 							{formatter.format(new Date(post.date))}
 						</span>
-						<h3 class="mt-2 text-xl font-semibold text-primary transition-colors group-hover:text-accent">
+						<span class="text-lg font-medium text-primary transition-colors group-hover:text-accent">
 							{post.title}
-						</h3>
-						<p class="mt-2 text-sm text-secondary">{post.description}</p>
+						</span>
+						{#if post.description}
+							<span class="text-sm text-secondary">{post.description}</span>
+						{/if}
 					</a>
 				</li>
 			{/each}
