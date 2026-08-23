@@ -1,3 +1,5 @@
+export const prerender = true;
+
 import type { RequestHandler } from '@sveltejs/kit';
 
 async function getBlogPosts() {
@@ -17,7 +19,6 @@ export const GET: RequestHandler = async ({ url }) => {
 	const blogPosts = await getBlogPosts();
 	const blogUrls = blogPosts.map((post) => `/blog/${post.slug}`);
 	const allPaths = [...staticPages, ...blogUrls];
-
 	const xml = `<?xml version="1.0" encoding="UTF-8" ?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
   ${allPaths
@@ -33,7 +34,6 @@ export const GET: RequestHandler = async ({ url }) => {
 		)
 		.join('')}
 </urlset>`;
-
 	return new Response(xml, {
 		headers: {
 			'Content-Type': 'application/xml',
