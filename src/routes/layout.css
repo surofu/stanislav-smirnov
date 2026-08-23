@@ -3,33 +3,27 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
-/* Тема переключается классом .dark на <html> (см. ThemeToggle.svelte),
-   а не через prefers-color-scheme — так пользователь может выбрать сам. */
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-	/* primary */
-	--color-primary: oklch(12.9% 0.042 264.695); /* slate-900   */
-	--color-primary-light: oklch(12.9% 0.042 264.695); /* slate-900   */
-	--color-primary-dark: oklch(98.4% 0.003 247.858); /* slate-50    */
-	--color-primary-bg: oklch(100% 0 255); /* white       */
+	/* primary — основной цвет текста */
+	--color-primary: oklch(12.9% 0.042 264.695); /* slate-900 */
+	--color-primary-bg: oklch(100% 0 255); /* white */
+	--color-primary-inverse: oklch(98.4% 0.003 247.858); /* slate-50 — для инверсных элементов */
+
 	/* secondary */
-	--color-secondary: #4b5563; /* gray-600    */
-	--color-secondary-light: #9ca3af; /* gray-400    */
-	--color-secondary-dark: #1f2937; /* gray-800    */
+	--color-secondary: #4b5563;
+	--color-secondary-light: #9ca3af;
+	--color-secondary-dark: #1f2937;
+
 	/* accent */
 	--color-accent: oklch(59.6% 0.145 163.225); /* emerald-600 */
 	--color-accent-2: oklch(54% 0.130 164);
-	--color-accent-light: oklch(59.6% 0.145 163.225); /* emerald-400 */
-	--color-accent-dark: oklch(59.6% 0.145 163.225); /* emerald-800 */
-}
 
-.app-button {
-	@apply inline-block rounded-lg border border-slate-200 bg-primary-bg px-8 py-3 shadow-lg transition-transform hover:-translate-y-1 sm:px-10 dark:border-slate-700;
-}
-
-.app-button-primary {
-	@apply inline-block rounded-lg border-none bg-accent-2 px-8 py-3 font-semibold text-white shadow-lg transition-transform hover:-translate-y-1 sm:px-10;
+	/* code — цвета для подсветки кода */
+	--color-code-bg: oklch(96% 0.01 260);
+	--color-code-text: oklch(12.9% 0.042 264.695);
+	--color-code-border: oklch(86% 0.02 260);
 }
 
 :root {
@@ -39,19 +33,22 @@
 	color-scheme: light;
 }
 
-/* Переопределяем те же токены под .dark — все text-primary/bg-primary-bg/...
-   утилиты подхватят новые значения без point-точечных dark:-классов по всему проекту. */
 .dark {
 	--bg-color: #0b0f14;
 	--text-color: #e5e7eb;
 	--grid-dot-color: oklch(28% 0.02 264deg);
 
-	--color-primary: oklch(98.4% 0.003 247.858); /* светлый текст на тёмном фоне */
-	--color-primary-bg: oklch(16% 0.012 264.695); /* тёмная поверхность */
-	--color-secondary: #9ca3af; /* gray-400 */
+	--color-primary: oklch(98.4% 0.003 247.858);
+	--color-primary-bg: oklch(16% 0.012 264.695);
+	--color-primary-inverse: oklch(12.9% 0.042 264.695);
+	--color-secondary: #9ca3af;
 	--color-secondary-light: #6b7280;
 	--color-secondary-dark: #d1d5db;
-	--color-accent: oklch(69.6% 0.145 163.225); /* светлее — для контраста на тёмном фоне */
+	--color-accent: oklch(69.6% 0.145 163.225);
+
+	--color-code-bg: oklch(20% 0.01 260);
+	--color-code-text: oklch(96% 0.01 260);
+	--color-code-border: oklch(28% 0.02 264);
 
 	color-scheme: dark;
 }
@@ -62,9 +59,7 @@ body {
 	min-height: 100dvh;
 	margin: 0;
 	padding: 0;
-	transition:
-		background-color 0.2s ease,
-		color 0.2s ease;
+	transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .app-wrapper {
@@ -77,10 +72,10 @@ body {
 
 .app-container {
 	width: 100%;
-	max-width: 1100px;
+	max-width: 1200px;
 	margin: 0 auto;
 }
 
 .tag {
-	@apply rounded-full border border-slate-200 bg-primary-bg px-6 py-1 shadow-md dark:border-slate-700;
+	@apply rounded-full border border-slate-200 dark:border-slate-700 bg-primary-bg px-6 py-1 shadow-md;
 }

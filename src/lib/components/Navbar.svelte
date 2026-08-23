@@ -3,12 +3,11 @@
 	import { page } from '$app/state';
 	import { afterNavigate } from '$app/navigation';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
-
-	type RoutePath = Parameters<typeof resolve>[0];
+	import type { StaticRouteId } from '$lib/types';
 
 	interface NavItem {
 		label: string;
-		href: RoutePath;
+		href: StaticRouteId;
 	}
 
 	const homeItem: NavItem = { label: 'Главная', href: '/' };

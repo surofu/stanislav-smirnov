@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { Seo } from '$lib';
+	import GridDots from '$lib/components/GridDots.svelte';
 </script>
 
 <Seo
@@ -179,3 +180,5 @@
 		<a href={resolve('/contacts')} class="app-button-primary">Связаться</a>
 	</div>
 </section>
+
+<GridDots />

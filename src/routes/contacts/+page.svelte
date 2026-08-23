@@ -1,3 +1,4 @@
+<!-- eslint-disable svelte/no-inner-declarations, svelte/valid-compile -->
 <script lang="ts">
 	import { Seo } from '$lib';
 
@@ -41,7 +42,7 @@
 	description="Свяжитесь со Stanislav Smirnov по email, Telegram, LinkedIn или GitHub, чтобы обсудить разработку сайта, CRM или Telegram-бота."
 />
 
-<section class="flex w-full h-full items-center justify-center">
+<section class="flex h-full w-full items-center justify-center">
 	<div class="w-full max-w-md">
 		<h1 class="mb-4 text-2xl font-bold tracking-tight text-primary sm:text-3xl">Контакты</h1>
 		<ul class="flex flex-col gap-1">

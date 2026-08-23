@@ -1,6 +1,6 @@
 <script lang="ts">
 	import './layout.css';
-	import {Navbar, Footer, GridDots} from '$lib';
+	import {Navbar, Footer} from '$lib';
 
 	let { children } = $props();
 </script>
@@ -24,7 +24,6 @@
 		<main class="py-16 h-full">
 			{@render children()}
 		</main>
-		<GridDots />
 	</div>
 	<Footer />
 </div>
