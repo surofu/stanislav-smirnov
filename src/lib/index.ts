@@ -8,3 +8,4 @@ export { default as PostContent } from './components/PostContent.svelte';
 export { default as PostTable } from './components/PostTable.svelte';
 export { default as PostImage } from './components/PostImage.svelte';
 export { default as PostList } from './components/PostList.svelte';
+export { default as ProjectContent } from './components/ProjectContent.svelte';
