@@ -10,7 +10,7 @@
 	});
 </script>
 
-<article class="mx-auto max-w-2xl lg:max-w-4xl xl:max-w-5xl">
+<article>
 	<a href={resolve('/blog')} class="text-sm text-secondary transition-colors hover:text-accent">
 		← Все посты
 	</a>

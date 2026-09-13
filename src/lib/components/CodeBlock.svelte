@@ -35,7 +35,7 @@
 </script>
 
 <div class="code-block my-6 overflow-hidden rounded-lg border border-slate-200 dark:border-slate-700 bg-[--color-code-bg] transition-colors">
-	<div class="flex items-center gap-2 border-b border-slate-200 px-4 py-2 text-sm font-medium text-secondary dark:border-slate-700">
+	<div class="flex items-center gap-2 bg-primary-bg border-b border-slate-200 px-4 py-2 text-sm font-medium text-secondary dark:border-slate-700">
 		{#if filename}
 			<svg class="size-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>

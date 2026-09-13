@@ -5,7 +5,7 @@
 <div class="not-prose my-8 overflow-x-auto rounded-lg border border-slate-200 dark:border-slate-700">
 	<table class="w-full border-collapse text-sm">
 		<thead>
-			<tr class="bg-primary-inverse">
+			<tr class="bg-primary-bg">
 				{#each headers as header}
 					<th
 						class="border-b border-slate-200 px-4 py-3 text-left font-semibold text-primary dark:border-slate-700"

@@ -17,7 +17,7 @@
 	description="Примеры работ: сайты, интернет-магазины, CRM и Telegram-боты, разработанные для бизнеса и частных специалистов."
 />
 
-<section class="mx-auto max-w-3xl lg:max-w-5xl">
+<section>
 	<h1 class="text-2xl font-bold tracking-tight text-primary sm:text-3xl">Проекты</h1>
 	<p class="mt-2 text-secondary">Примеры работ по категориям.</p>
 

@@ -2,6 +2,8 @@ export const prerender = true;
 
 import type { RequestHandler } from '@sveltejs/kit';
 
+const baseUrl = 'https://stanislav-smirnov.tech';
+
 async function getBlogPosts() {
 	const modules = import.meta.glob('/src/routes/blog/**/*.md');
 	const posts = await Promise.all(
@@ -13,8 +15,7 @@ async function getBlogPosts() {
 	return posts;
 }
 
-export const GET: RequestHandler = async ({ url }) => {
-	const baseUrl = url.origin;
+export const GET: RequestHandler = async () => {
 	const staticPages = ['', '/blog', '/projects', '/contacts'];
 	const blogPosts = await getBlogPosts();
 	const blogUrls = blogPosts.map((post) => `/blog/${post.slug}`);

@@ -11,10 +11,10 @@
 		'@context': 'https://schema.org',
 		'@type': 'Person',
 		name: 'Stanislav Smirnov',
-		jobTitle: 'Full-stack разработчик',
+		jobTitle: 'Разработчик интернет-магазинов и CRM-систем',
 		description:
-				'Разработка сайтов, интернет-магазинов, CRM и Telegram-ботов для бизнеса и частных специалистов.',
-		sameAs: ['https://github.com/surofu', 'https://t.me/smstanislav', 'https://linkedin.com/in/surofu']
+				'Разработка онлайн-магазинов и CRM-систем для малого и среднего бизнеса.',
+		sameAs: ['https://www.instagram.com/stanislav.smirnov.tech', 'https://linkedin.com/in/surofu', 'https://github.com/surofu', 'https://t.me/smstanislav']
 	})}<` + `/script>`}
 </svelte:head>
 

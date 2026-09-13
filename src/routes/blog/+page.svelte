@@ -17,7 +17,7 @@
 	description="Заметки о разработке на Kotlin, Spring Boot и SvelteKit — архитектура, продакшн-практики, разбор технических решений."
 />
 
-<section class="mx-auto max-w-2xl">
+<section>
 	<h1 class="text-2xl font-semibold text-primary">Блог</h1>
 	<p class="mt-2 text-secondary">Заметки о бэкенде, фронтенде и продакшн-практиках.</p>
 

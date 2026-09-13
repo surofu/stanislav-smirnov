@@ -26,6 +26,11 @@
 	const socialLinks: SocialLink[] = [
 		{ label: 'Email', icon: '/icon/gmail.svg', href: 'mailto:stanislavsmwork@gmail.com' },
 		{ label: 'Telegram', icon: '/icon/telegram.svg', href: 'https://t.me/smstanislav' },
+		{
+			label: 'Instagram',
+			icon: '/icon/instagram.svg',
+			href: 'https://www.instagram.com/stanislav.smirnov.tech'
+		},
 		{ label: 'LinkedIn', icon: '/icon/linkedin.svg', href: 'https://linkedin.com/in/surofu' },
 		{ label: 'GitHub', icon: '/icon/github.svg', href: 'https://github.com/surofu' }
 	];
@@ -43,7 +48,7 @@
 				<span class="font-medium text-primary">Stanislav Smirnov</span>
 			</a>
 			<p class="mt-3 text-sm text-secondary">
-				Разработка сайтов, CRM и Telegram-ботов для бизнеса и частных специалистов — от заявки до
+				Разработка онлайн-магазинов и CRM-систем для малого и среднего бизнеса — от заявки до
 				запуска без посредников.
 			</p>
 		</div>

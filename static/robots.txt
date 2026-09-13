@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://stanislav-smirnov.pages.dev/sitemap.xml
+Sitemap: https://stanislav-smirnov.tech/sitemap.xml

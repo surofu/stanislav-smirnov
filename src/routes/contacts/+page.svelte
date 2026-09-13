@@ -25,6 +25,12 @@
 			icon: '/icon/telegram.svg'
 		},
 		{
+			label: 'Instagram',
+			value: '@stanislav.smirnov.tech',
+			href: 'https://www.instagram.com/stanislav.smirnov.tech',
+			icon: '/icon/instagram.svg'
+		},
+		{
 			label: 'LinkedIn',
 			value: 'in/surofu',
 			href: 'https://linkedin.com/in/surofu',
@@ -41,7 +47,7 @@
 
 <Seo
 	title="Контакты"
-	description="Свяжитесь со Stanislav Smirnov по email, Telegram, LinkedIn или GitHub, чтобы обсудить разработку сайта, CRM или Telegram-бота."
+	description="Свяжитесь со Stanislav Smirnov по email, Telegram, Instagram, LinkedIn или GitHub, чтобы обсудить разработку онлайн-магазина или CRM-системы для бизнеса."
 />
 
 <section class="flex h-full w-full items-center justify-center">

@@ -2,12 +2,12 @@
 	import type { Component } from 'svelte';
 	import { resolve } from '$app/paths';
 	import { PROJECT_CATEGORIES } from '$lib/types';
-	import type { ProjectMeta } from '$lib/types';
+	import type { ProjectMeta, ResolvedPathname } from '$lib/types';
 
 	let { component: Project, meta }: { component: Component; meta: ProjectMeta } = $props();
 </script>
 
-<article class="mx-auto max-w-2xl lg:max-w-4xl xl:max-w-5xl">
+<article>
 	<a href={resolve('/projects')} class="text-sm text-secondary transition-colors hover:text-accent">
 		← Все проекты
 	</a>
@@ -25,7 +25,7 @@
 			</div>
 		{/if}
 		{#if meta.link}
-			<a href={meta.link} target="_blank" rel="noopener noreferrer" class="app-button-primary mt-6 inline-flex">
+			<a href={meta.link as ResolvedPathname} target="_blank" rel="noopener noreferrer" class="app-button-primary mt-6 inline-flex">
 				Смотреть проект →
 			</a>
 		{/if}
