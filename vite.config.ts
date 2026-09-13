@@ -18,7 +18,10 @@ export default defineConfig({
 				precompress: false,
 				strict: true
 			}),
-			extensions: ['.svelte']
+      extensions: ['.svelte'],
+      prerender: {
+				handleUnseenRoutes: 'ignore'
+			}
 		})
 	]
 });

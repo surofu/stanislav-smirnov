@@ -4,7 +4,7 @@
 		description:
 			'Разбираем архитектурные решения для небольшого продакшн-проекта на скромном VPS: аутентификация через BFF, Spring Data JDBC вместо JPA и гибридный рендеринг в SvelteKit.',
 		date: '2026-08-23',
-		published: true
+		published: false
 	};
 </script>
 

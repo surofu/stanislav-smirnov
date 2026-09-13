@@ -4,7 +4,7 @@
 		description:
 			'Учёт заявок, история обслуживания клиентов и склад запчастей — вместо таблиц в Excel, которые расходились между филиалами.',
 		date: '2026-07-10',
-		published: true,
+		published: false,
 		category: 'crm',
 		link: 'https://example.com',
 		stack: ['Kotlin', 'Spring Boot', 'PostgreSQL', 'SvelteKit']
