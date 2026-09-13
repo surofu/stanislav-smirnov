@@ -15,7 +15,7 @@
 			Разработка сайта для вашего бизнеса <span class="text-accent">от 300 BYN</span>
 		</h1>
 		<h2 class="mt-4 text-base text-secondary sm:text-lg">
-			<span class="text-accent">5 лет</span> разрабатываю и автоматизирую продукты
+			<span class="text-accent">5 лет</span> разрабатываю и автоматизирую
 		</h2>
 		<div class="mt-6 flex flex-wrap gap-2 text-sm">
 			<span class="tag">приём онлайн-оплаты</span>
