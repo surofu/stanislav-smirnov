@@ -26,8 +26,8 @@
 		},
 		{
 			label: 'Instagram',
-			value: '@stanislav.smirnov.tech',
-			href: 'https://www.instagram.com/stanislav.smirnov.tech',
+			value: '@stanislavsm.tech',
+			href: 'https://www.instagram.com/stanislavsm.tech',
 			icon: '/icon/instagram.svg'
 		},
 		{

@@ -29,7 +29,7 @@
 		{
 			label: 'Instagram',
 			icon: '/icon/instagram.svg',
-			href: 'https://www.instagram.com/stanislav.smirnov.tech'
+			href: 'https://www.instagram.com/stanislavsm.tech'
 		},
 		{ label: 'LinkedIn', icon: '/icon/linkedin.svg', href: 'https://linkedin.com/in/surofu' },
 		{ label: 'GitHub', icon: '/icon/github.svg', href: 'https://github.com/surofu' }

@@ -14,7 +14,7 @@
 		jobTitle: 'Разработчик интернет-магазинов и CRM-систем',
 		description:
 				'Разработка онлайн-магазинов и CRM-систем для малого и среднего бизнеса.',
-		sameAs: ['https://www.instagram.com/stanislav.smirnov.tech', 'https://linkedin.com/in/surofu', 'https://github.com/surofu', 'https://t.me/smstanislav']
+		sameAs: ['https://www.instagram.com/stanislavsm.tech', 'https://linkedin.com/in/surofu', 'https://github.com/surofu', 'https://t.me/smstanislav']
 	})}<` + `/script>`}
 </svelte:head>
 
