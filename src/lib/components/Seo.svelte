@@ -8,7 +8,7 @@
 		type?: 'website' | 'article';
 	}
 
-	let { title, description, image = '/images/avatar.jpg', type = 'website' }: Props = $props();
+	let { title, description, image = '/images/avatar.avif', type = 'website' }: Props = $props();
 
 	const siteName = 'Stanislav Smirnov';
 

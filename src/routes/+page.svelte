@@ -32,7 +32,7 @@
 	<div class="order-1 flex justify-center md:order-2 md:justify-end">
 		<img
 			class="h-52 w-52 rounded-full border border-slate-200 object-cover shadow-md md:h-64 md:w-64 dark:border-slate-700"
-			src="/images/avatar.jpg"
+			src="/images/avatar.avif"
 			alt="Аватар Stanislav Smirnov"
 		/>
 	</div>
