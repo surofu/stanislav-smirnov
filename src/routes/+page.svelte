@@ -9,12 +9,12 @@
 	description="Разработка интернет-магазинов и CRM-систем для малого и среднего бизнеса от 100 BYN. Без посредников — от заявки до запуска."
 />
 
-<section class="relative grid grid-cols-1 items-center gap-10 sm:grid-cols-[1fr_auto] sm:gap-16">
-	<div class="order-2 max-w-xl sm:order-1">
-		<h1 class="text-3xl font-semibold tracking-tight text-primary sm:text-4xl">
-			Разработка сайта для вашего бизнеса <span class="text-accent">от 300 BYN</span>
+<section class="relative grid grid-cols-1 items-center gap-10 md:grid-cols-[1fr_auto] md:gap-16">
+	<div class="order-2 max-w-xl md:order-1">
+		<h1 class="text-3xl font-semibold tracking-tight text-primary md:text-4xl">
+			Разработка сайта для вашего бизнеса <span class="text-accent">от&nbsp;300&nbsp;BYN</span>
 		</h1>
-		<h2 class="mt-4 text-base text-secondary sm:text-lg">
+		<h2 class="mt-4 text-base text-secondary md:text-lg">
 			<span class="text-accent">5 лет</span> разрабатываю и автоматизирую
 		</h2>
 		<div class="mt-6 flex flex-wrap gap-2 text-sm">
@@ -29,23 +29,23 @@
 			<a href={resolve('/projects')} class="app-button">Примеры работ</a>
 		</div>
 	</div>
-	<div class="order-1 flex justify-center sm:order-2 sm:justify-end">
+	<div class="order-1 flex justify-center md:order-2 md:justify-end">
 		<img
-			class="h-52 w-52 rounded-full border border-slate-200 object-cover shadow-md sm:h-64 sm:w-64 dark:border-slate-700"
+			class="h-52 w-52 rounded-full border border-slate-200 object-cover shadow-md md:h-64 md:w-64 dark:border-slate-700"
 			src="/images/avatar.jpg"
 			alt="Аватар Stanislav Smirnov"
 		/>
 	</div>
 </section>
 
-<section class="mt-24 sm:mt-32">
+<section class="mt-24 md:mt-32">
 	<h2 class="text-2xl font-semibold tracking-tight text-primary">Для кого</h2>
 	<p class="mt-2 max-w-lg text-secondary">
 		Работаю с владельцами малого и среднего бизнеса, которым нужен свой магазин или порядок в
 		клиентах и заказах.
 	</p>
 
-	<div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
+	<div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2">
 		<div class="rounded-lg border border-slate-200 bg-primary-bg p-6 dark:border-slate-700">
 			<h3 class="font-semibold text-primary">Нужен интернет-магазин</h3>
 			<p class="mt-2 text-sm text-secondary">
@@ -63,13 +63,13 @@
 	</div>
 </section>
 
-<section class="mt-24 sm:mt-32">
+<section class="mt-24 md:mt-32">
 	<h2 class="text-2xl font-semibold tracking-tight text-primary">Как проходит работа</h2>
 	<p class="mt-2 max-w-lg text-secondary">
 		Без менеджеров и переписки в десяти чатах — от заявки до запуска работаем напрямую.
 	</p>
 
-	<div class="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+	<div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
 		<div>
 			<span class="text-sm font-medium text-accent">01</span>
 			<h3 class="mt-2 font-semibold text-primary">Заявка</h3>
@@ -97,8 +97,8 @@
 	</div>
 </section>
 
-<section class="mt-24 pt-20 text-center sm:mt-32">
-	<h2 class="text-2xl font-bold tracking-tight text-primary sm:text-3xl">Есть задача — обсудим</h2>
+<section class="mt-24 pt-20 text-center md:mt-32">
+	<h2 class="text-2xl font-bold tracking-tight text-primary md:text-3xl">Есть задача — обсудим</h2>
 	<div class="mt-8">
 		<a href={resolve('/contacts')} class="app-button-primary">Связаться</a>
 	</div>
