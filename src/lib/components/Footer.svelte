@@ -2,6 +2,7 @@
 	import { resolve } from '$app/paths';
 	import logo from '$lib/assets/favicon.svg';
 	import type { RouteId, ResolvedPathname } from '$app/types';
+	import { CONTACTS } from '$lib/contacts';
 
 	type StaticRouteId = Exclude<RouteId, `${string}[${string}`>;
 
@@ -24,15 +25,15 @@
 	];
 
 	const socialLinks: SocialLink[] = [
-		{ label: 'Email', icon: '/icon/gmail.svg', href: 'mailto:stanislavsmwork@gmail.com' },
-		{ label: 'Telegram', icon: '/icon/telegram.svg', href: 'https://t.me/smstanislav' },
+		{ label: 'Email', icon: '/icon/gmail.svg', href: `mailto:${CONTACTS.email}` },
+		{ label: 'Telegram', icon: '/icon/telegram.svg', href: `https://t.me/${CONTACTS.telegram}` },
 		{
 			label: 'Instagram',
 			icon: '/icon/instagram.svg',
-			href: 'https://www.instagram.com/stanislavsm.tech'
+			href: `https://www.instagram.com/${CONTACTS.instagram}`
 		},
-		{ label: 'LinkedIn', icon: '/icon/linkedin.svg', href: 'https://linkedin.com/in/surofu' },
-		{ label: 'GitHub', icon: '/icon/github.svg', href: 'https://github.com/surofu' }
+		{ label: 'LinkedIn', icon: '/icon/linkedin.svg', href: `https://linkedin.com/in/${CONTACTS.linkedin}` },
+		{ label: 'GitHub', icon: '/icon/github.svg', href: `https://github.com/${CONTACTS.github}` }
 	];
 
 	const year = new Date().getFullYear();

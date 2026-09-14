@@ -12,11 +12,6 @@
 		/>
 		<title>Онлайн-магазины и CRM для бизнеса от 300 BYN</title>
 
-		<!--
-        Иконки лежат в /static — отдаются как есть, без обработки Vite.
-        favicon.svg умеет prefers-color-scheme (см. static/favicon.svg), поэтому он первым
-        после PNG-фолбэка: браузеры, поддерживающие type="image/svg+xml", возьмут именно его.
-    -->
 		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="shortcut icon" href="/favicon.svg" />
@@ -24,10 +19,6 @@
 		<meta name="apple-mobile-web-app-title" content="Stanislav" />
 		<link rel="manifest" href="/site.webmanifest" />
 
-		<!--
-        Ставим класс .dark ДО первой отрисовки, чтобы не было "мигания" светлой темой
-        при загрузке (FOUC). Синхронный inline-скрипт — намеренно, без задержек на бандл.
-    -->
 		<script>
 			(function () {
 				try {
@@ -36,8 +27,7 @@
 						? stored === 'dark'
 						: window.matchMedia('(prefers-color-scheme: dark)').matches;
 					document.documentElement.classList.toggle('dark', dark);
-				} catch (e) {
-					/* localStorage/matchMedia недоступны — остаёмся на светлой теме по умолчанию */
+				} catch (_) {
 				}
 			})();
 		</script>

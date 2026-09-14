@@ -1,6 +1,7 @@
 <script lang="ts">
 	import './layout.css';
 	import {Navbar, Footer} from '$lib';
+	import { CONTACTS } from '$lib/contacts';
 
 	let { children } = $props();
 </script>
@@ -14,7 +15,7 @@
 		jobTitle: 'Разработчик интернет-магазинов и CRM-систем',
 		description:
 				'Разработка онлайн-магазинов и CRM-систем для малого и среднего бизнеса.',
-		sameAs: ['https://www.instagram.com/stanislavsm.tech', 'https://linkedin.com/in/surofu', 'https://github.com/surofu', 'https://t.me/smstanislav']
+		sameAs: [`https://www.instagram.com/${CONTACTS.instagram}`, `https://linkedin.com/in/${CONTACTS.linkedin}`, `https://github.com/${CONTACTS.github}`, `https://t.me/${CONTACTS.telegram}`]
 	})}<` + `/script>`}
 </svelte:head>
 

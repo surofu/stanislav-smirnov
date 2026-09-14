@@ -3,6 +3,7 @@
 	import type { ResolvedPathname } from '$app/types';
 	import { Seo } from '$lib';
 	import GridDots from '$lib/components/GridDots.svelte';
+	import { CONTACTS } from '$lib/contacts';
 
 	interface ContactLink {
 		label: string;
@@ -14,32 +15,32 @@
 	const contacts: ContactLink[] = [
 		{
 			label: 'Email',
-			value: 'stanislavsmwork@gmail.com',
-			href: 'mailto:stanislavsmwork@gmail.com',
+			value: CONTACTS.email,
+			href: `mailto:${CONTACTS.email}`,
 			icon: '/icon/gmail.svg'
 		},
 		{
 			label: 'Telegram',
-			value: '@smstanislav',
-			href: 'https://t.me/smstanislav',
+			value: `@${CONTACTS.telegram}`,
+			href: `https://t.me/${CONTACTS.telegram}`,
 			icon: '/icon/telegram.svg'
 		},
 		{
 			label: 'Instagram',
-			value: '@stanislavsm.tech',
-			href: 'https://www.instagram.com/stanislavsm.tech',
+			value: `@${CONTACTS.instagram}`,
+			href: `https://www.instagram.com/${CONTACTS.instagram}`,
 			icon: '/icon/instagram.svg'
 		},
 		{
 			label: 'LinkedIn',
-			value: 'in/surofu',
-			href: 'https://linkedin.com/in/surofu',
+			value: `in/${CONTACTS.linkedin}`,
+			href: `https://linkedin.com/in/${CONTACTS.linkedin}`,
 			icon: '/icon/linkedin.svg'
 		},
 		{
 			label: 'GitHub',
-			value: 'surofu',
-			href: 'https://github.com/surofu',
+			value: CONTACTS.github,
+			href: `https://github.com/${CONTACTS.github}`,
 			icon: '/icon/github.svg'
 		}
 	];
