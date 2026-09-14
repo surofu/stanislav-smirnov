@@ -1,25 +1,18 @@
 export const prerender = true;
 
+import { CONTACTS } from '$lib/contacts';
+import { getAllPosts } from '$lib/posts';
+import { getAllProjects } from '$lib/projects';
 import type { RequestHandler } from '@sveltejs/kit';
 
-const baseUrl = 'https://stanislav-smirnov.tech';
-
-async function getBlogPosts() {
-	const modules = import.meta.glob('/src/routes/blog/**/*.md');
-	const posts = await Promise.all(
-		Object.keys(modules).map(async (path) => {
-			const slug = path.split('/').pop()?.replace(/\.md$/, '');
-			return { slug };
-		})
-	);
-	return posts;
-}
+const baseUrl = `https://${CONTACTS.site}`;
 
 export const GET: RequestHandler = async () => {
 	const staticPages = ['', '/blog', '/projects', '/contacts'];
-	const blogPosts = await getBlogPosts();
-	const blogUrls = blogPosts.map((post) => `/blog/${post.slug}`);
-	const allPaths = [...staticPages, ...blogUrls];
+	const blogUrls = getAllPosts().map((post) => `/blog/${post.slug}`);
+	const projectUrls = getAllProjects().map((project) => `/projects/${project.slug}`);
+	const allPaths = [...staticPages, ...blogUrls, ...projectUrls];
+
 	const xml = `<?xml version="1.0" encoding="UTF-8" ?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
   ${allPaths

@@ -16,10 +16,9 @@ export interface PostMeta {
 }
 
 export const PROJECT_CATEGORIES = {
+  landing: 'Лендинги и сайты-визитки',
 	shop: 'Интернет-магазины',
-	bot: 'Telegram-боты',
 	crm: 'CRM и админ-панели',
-	landing: 'Лендинги и сайты-визитки'
 } as const;
 
 export type ProjectCategory = keyof typeof PROJECT_CATEGORIES;
