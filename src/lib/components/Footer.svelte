@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import logo from '$lib/assets/favicon.svg';
 	import type { RouteId, ResolvedPathname } from '$app/types';
 	import { CONTACTS } from '$lib/contacts';
 
@@ -45,7 +44,7 @@
 	>
 		<div class="max-w-sm">
 			<a href={resolve('/')} class="flex items-center gap-2">
-				<img src={logo} alt="Stanislav Smirnov" class="h-7 w-7" />
+				<img src="/favicon.svg" alt="Stanislav Smirnov" class="h-7 w-7" />
 				<span class="font-medium text-primary">Stanislav Smirnov</span>
 			</a>
 			<p class="mt-3 text-sm text-secondary">
