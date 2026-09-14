@@ -15,10 +15,19 @@ export interface PostMeta {
 	published: boolean;
 }
 
+export const CONTACTS = {
+	site: 'stanislav-smirnov.tech',
+	email: 'stanislavsmwork@gmail.com',
+	telegram: 'smstanislav',
+	instagram: 'stanislavsmtech',
+	linkedin: 'surofu',
+	github: 'surofu'
+} as const;
+
 export const PROJECT_CATEGORIES = {
-  landing: 'Лендинги и сайты-визитки',
-	shop: 'Интернет-магазины',
-	crm: 'CRM и админ-панели',
+  landing: 'Лендинг и сайт-визитка',
+	shop: 'Интернет-магазин',
+	crm: 'CRM-система',
 } as const;
 
 export type ProjectCategory = keyof typeof PROJECT_CATEGORIES;
@@ -31,6 +40,7 @@ export interface ProjectModule {
 export interface ProjectMeta {
 	title: string;
 	description: string;
+	image: string | null;
 	date: string;
 	published: boolean;
 	category: ProjectCategory;

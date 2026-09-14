@@ -45,7 +45,7 @@ export function getProjectComponent(
 
 	const [, mod] = entry;
 
-	if (mod.metadata.published === false) return null;
+	if (!mod.metadata.published) return null;
 
 	return { component: mod.default, meta: mod.metadata };
 }

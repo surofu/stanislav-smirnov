@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import type { RouteId, ResolvedPathname } from '$app/types';
-	import { CONTACTS } from '$lib/contacts';
+	import {CONTACTS} from '$lib/types';
 
 	type StaticRouteId = Exclude<RouteId, `${string}[${string}`>;
 

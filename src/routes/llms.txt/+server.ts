@@ -1,6 +1,6 @@
 export const prerender = true;
 
-import { CONTACTS } from '$lib/contacts';
+import { CONTACTS } from '$lib/types';
 import { getAllPosts } from '$lib/posts';
 import { getAllProjects } from '$lib/projects';
 import type { RequestHandler } from '@sveltejs/kit';
