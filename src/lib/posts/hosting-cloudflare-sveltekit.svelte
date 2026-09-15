@@ -95,3 +95,10 @@ sveltekit({
     подключи репозиторий в Cloudflare Pages напрямую из дашборда и перенеси NS-записи домена
     на Cloudflare. Дальше git push — единственная DevOps-операция, которая тебе понадобится.
 </p>
+
+<p>
+    Исходники:
+    <a href="https://github.com/surofu/stanislav-smirnov" target="_blank" rel="noopener">
+        github.com/surofu/stanislav-smirnov
+    </a>
+</p>
