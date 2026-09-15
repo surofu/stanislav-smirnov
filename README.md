@@ -1,42 +1,108 @@
-# sv
+<p align="center">
+  <img src="static/images/blog/hosting-cloudflare-sveltekit/preview.avif" alt="Cloudflare Pages + SvelteKit" width="480" />
+</p>
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+# stanislav-smirnov
 
-## Creating a project
+Личный сайт-портфолио: блог, кейсы проектов и контакты. Полностью статический
+SvelteKit-проект без сервера — деплой на Cloudflare Pages по `git push`.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Стек
 
-```sh
-# create a new project
-npx sv create my-app
+- **SvelteKit** + `@sveltejs/adapter-static` — статическая сборка, без SSR
+- **Cloudflare Pages** — хостинг с нативной git-интеграцией (без CI/CD-конфигов)
+- **Cloudflare DNS/CDN** — резолвинг и раздача статики
+- **pnpm** — пакетный менеджер
+- Посты блога — `.svelte`-компоненты, а не Markdown
+
+Подробный разбор связки — в посте блога:
+[`src/lib/posts/hosting-cloudflare-sveltekit.svelte`](src/lib/posts/hosting-cloudflare-sveltekit.svelte).
+
+## Структура
+
+```
+src/
+├── lib/
+│   ├── components/   # переиспользуемые компоненты (CodeBlock, PostImage, Navbar, Footer...)
+│   ├── posts/         # посты блога как .svelte-компоненты
+│   ├── projects/      # кейсы проектов как .svelte-компоненты
+│   ├── posts.ts       # реестр постов
+│   ├── projects.ts    # реестр проектов
+│   └── types.ts
+└── routes/
+    ├── blog/          # список и страница поста
+    ├── projects/      # список и страница проекта
+    ├── contacts/
+    ├── sitemap.xml/
+    └── llms.txt/
 ```
 
-To recreate this project with the same configuration:
+## Локальный запуск
 
-```sh
-# recreate this project
-pnpm dlx sv@0.17.0 create --template minimal --types ts --add prettier eslint tailwindcss="plugins:typography,forms" sveltekit-adapter="adapter:auto" --install pnpm portfolio-web
+```bash
+pnpm install
+pnpm dev
 ```
 
-## Developing
+## Сборка
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Адаптер настроен на статический вывод в папку `build`:
 
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```ts
+// vite.config.ts
+adapter({
+    pages: 'build',
+    assets: 'build',
+    fallback: undefined,
+    precompress: false,
+    strict: true
+})
 ```
 
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
+```bash
+pnpm build
 ```
 
-You can preview the production build with `npm run preview`.
+`strict: true` и `fallback: undefined` намеренно ломают сборку, если в проект попадёт
+страница, которую нельзя пререндерить в статику — ошибка на билде лучше, чем сломанный
+роут в проде.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Деплой
+
+Отдельного CI нет. Cloudflare Pages подключён к репозиторию напрямую через дашборд:
+команда сборки `vite build`, выходная папка `build`. Каждый пуш в ветку триггерит клон →
+сборку → выкладку автоматически.
+
+<p align="center">
+  <img src="static/images/blog/hosting-cloudflare-sveltekit/build-log.avif" alt="Build log Cloudflare Pages" width="600" />
+</p>
+
+От коммита до прода — около 24 секунд, без единой строчки YAML.
+
+## Производительность
+
+Google PageSpeed Insights (десктоп) — 100/100 по всем категориям:
+
+<p align="center">
+  <img src="static/images/blog/hosting-cloudflare-sveltekit/page-speed-insights.avif" alt="PageSpeed Insights 100/100" width="700" />
+</p>
+
+| Метрика | Значение |
+|---|---|
+| Производительность | 100 |
+| Специальные возможности | 100 |
+| Рекомендации | 100 |
+| Поисковая оптимизация | 100 |
+| First Contentful Paint | 0,4 сек |
+| Largest Contentful Paint | 0,4 сек |
+| Total Blocking Time | 0 мс |
+| Cumulative Layout Shift | 0 |
+| Speed Index | 0,5 сек |
+
+## Стоимость инфраструктуры
+
+Домен + Cloudflare (DNS, CDN, хостинг, автодеплой) — 0 руб/мес сверх регистрации домена.
+
+## Лицензия
+
+[MIT](LICENSE) — используйте, копируйте, форкайте без ограничений.
