@@ -6,7 +6,6 @@
     let {data}: PageProps = $props();
 
     const formatter = new Intl.DateTimeFormat('ru-RU', {
-        day: 'numeric',
         month: 'long',
         year: 'numeric'
     });
@@ -39,11 +38,11 @@
                                 {/if}
                                 <div class="flex h-full flex-col gap-2 p-5">
 									<span class="text-xs text-secondary-light">
-									{formatter.format(new Date(project.date))}
-								</span>
+									    {formatter.format(new Date(project.date))}
+								    </span>
                                     <span class="font-medium text-primary transition-colors group-hover:text-accent">
-									{project.title}
-								</span>
+									    {project.title}
+								    </span>
                                     {#if project.description}
                                         <span class="text-sm text-secondary">{project.description}</span>
                                     {/if}

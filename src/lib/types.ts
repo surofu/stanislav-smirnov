@@ -25,9 +25,9 @@ export const CONTACTS = {
 } as const;
 
 export const PROJECT_CATEGORIES = {
-  landing: 'Лендинг и сайт-визитка',
-	shop: 'Интернет-магазин',
-	crm: 'CRM-система',
+	crm: 'CRM-системы',
+	shop: 'Интернет-магазины',
+	landing: 'Лендинги и сайты-визитки',
 } as const;
 
 export type ProjectCategory = keyof typeof PROJECT_CATEGORIES;
