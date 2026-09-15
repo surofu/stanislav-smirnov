@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import {CONTACTS} from "$lib/types";
 
 	interface Props {
 		title: string;
@@ -11,10 +12,11 @@
 	let { title, description, image = '/images/avatar.avif', type = 'website' }: Props = $props();
 
 	const siteName = 'Stanislav Smirnov';
+	const SITE_URL = `https://${CONTACTS.site}`;
 
 	let fullTitle = $derived(title.includes(siteName) ? title : `${title} — ${siteName}`);
-	let canonical = $derived(new URL(page.url.pathname, page.url.origin).toString());
-	let absoluteImage = $derived(new URL(image, page.url.origin).toString());
+	let canonical = $derived(new URL(page.url.pathname, SITE_URL).toString());
+	let absoluteImage = $derived(new URL(image, SITE_URL).toString());
 </script>
 
 <svelte:head>

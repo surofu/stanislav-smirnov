@@ -33,7 +33,8 @@ export default defineConfig({
 			}),
 			extensions: ['.svelte'],
 			prerender: {
-				handleUnseenRoutes: 'ignore'
+				handleUnseenRoutes: 'ignore',
+				origin: 'https://stanislav-smirnov.tech'
 			}
 		})
 	]
