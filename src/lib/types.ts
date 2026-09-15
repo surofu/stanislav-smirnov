@@ -11,6 +11,8 @@ export interface PostModule {
 export interface PostMeta {
 	title: string;
 	description: string;
+	image: string;
+	tags: string[];
 	date: string;
 	published: boolean;
 }
@@ -40,7 +42,7 @@ export interface ProjectModule {
 export interface ProjectMeta {
 	title: string;
 	description: string;
-	image: string | null;
+	image: string;
 	date: string;
 	published: boolean;
 	category: ProjectCategory;

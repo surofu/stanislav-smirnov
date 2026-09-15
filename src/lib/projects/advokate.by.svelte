@@ -1,4 +1,5 @@
 <script module lang="ts">
+    import {PostImage, PostList} from "$lib";
     import type {ProjectMeta} from "$lib/types";
 
     export const metadata: ProjectMeta = {
@@ -11,9 +12,6 @@
         link: 'https://advokate.site',
         stack: ['Html', 'Css', 'Javascript'],
     };
-</script>
-<script>
-    import {PostImage, PostList} from "$lib";
 </script>
 
 <p>

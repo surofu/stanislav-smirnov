@@ -4,6 +4,19 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+	build: {
+		minify: 'terser',
+		terserOptions: {
+			compress: {
+				drop_console: true,
+				passes: 2
+			},
+			mangle: { toplevel: true }
+		},
+		cssMinify: 'lightningcss',
+		sourcemap: false,
+		assetsInlineLimit: 2048
+	},
 	plugins: [
 		tailwindcss(),
 		sveltekit({
@@ -18,8 +31,8 @@ export default defineConfig({
 				precompress: false,
 				strict: true
 			}),
-      extensions: ['.svelte'],
-      prerender: {
+			extensions: ['.svelte'],
+			prerender: {
 				handleUnseenRoutes: 'ignore'
 			}
 		})

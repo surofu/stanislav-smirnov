@@ -9,15 +9,29 @@
 	import 'prismjs/components/prism-sql';
 	import 'prismjs/components/prism-docker';
 	import 'prismjs/components/prism-nginx';
+	import type { Snippet } from 'svelte';
 
-	let { code, language = 'text', filename = '' }: {
-		code: string;
-		language?: string;
+	let {
+		children,
+		lang = 'text',
+		filename = ''
+	}: {
+		children: Snippet;
+		lang?: string;
 		filename?: string;
 	} = $props();
 
-	const grammar = $derived(Prism.languages[language]);
-	const highlighted = $derived(grammar ? Prism.highlight(code, grammar, language) : code);
+	// children рендерятся в скрытый узел только чтобы вытащить их как обычный текст —
+	// сам код Prism подсвечивает уже из этой строки, а не из DOM children.
+	let codeEl: HTMLElement;
+	let code = $state('');
+
+	$effect(() => {
+		if (codeEl) code = codeEl.textContent ?? '';
+	});
+
+	const grammar = $derived(Prism.languages[lang]);
+	const highlighted = $derived(grammar ? Prism.highlight(code, grammar, lang) : code);
 
 	let copied = $state(false);
 	let copyTimeout: ReturnType<typeof setTimeout>;
@@ -34,38 +48,55 @@
 	}
 </script>
 
-<div class="code-block my-6 overflow-hidden rounded-lg border border-slate-200 dark:border-slate-700 bg-[--color-code-bg] transition-colors">
-	<div class="flex items-center gap-2 bg-primary-bg border-b border-slate-200 px-4 py-2 text-sm font-medium text-secondary dark:border-slate-700">
+<div
+		class="code-block my-6 overflow-hidden rounded-lg border border-slate-200 bg-[--color-code-bg] transition-colors dark:border-slate-700"
+>
+	<div
+			class="flex items-center gap-2 border-b border-slate-200 bg-primary-bg px-4 py-2 text-sm font-medium text-secondary dark:border-slate-700"
+	>
 		{#if filename}
 			<svg class="size-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+				<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+				/>
 			</svg>
 			<span>{filename}</span>
 		{/if}
-		<span class="text-xs text-secondary-light" class:ml-auto={!filename}>{language}</span>
+		<span class="text-xs text-secondary-light" class:ml-auto={!filename}>{lang}</span>
 
 		<button
-			type="button"
-			onclick={copyCode}
-			class="ml-auto flex items-center gap-1 rounded-md px-2 py-1 text-xs text-secondary transition-colors hover:bg-primary hover:text-primary-inverse"
-			class:ml-2={filename}
-			aria-label="Скопировать код"
+				type="button"
+				onclick={copyCode}
+				class="ml-auto flex items-center gap-1 rounded-md px-2 py-1 text-xs text-secondary transition-colors hover:bg-primary hover:text-primary-inverse"
+				class:ml-2={filename}
+				aria-label="Скопировать код"
 		>
 			{#if copied}
 				<svg class="size-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 				</svg>
 				Скопировано
 			{:else}
 				<svg class="size-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+					<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+					/>
 				</svg>
 				Копировать
 			{/if}
 		</button>
 	</div>
 
-	<pre class="overflow-x-auto p-4 text-sm"><code class="language-{language}">{@html highlighted}</code></pre>
+	<pre class="overflow-x-auto p-4 text-sm"><code class="language-{lang}">{@html highlighted}</code
+	></pre>
+
+	<span bind:this={codeEl} class="hidden">{@render children()}</span>
 </div>
 
 <style>

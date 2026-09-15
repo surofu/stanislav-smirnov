@@ -71,24 +71,24 @@
 
 	<div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
 		<div>
-			<span class="text-sm font-medium text-accent">01</span>
+			<span class="text-md font-medium text-accent">01</span>
 			<h3 class="mt-2 font-semibold text-primary">Заявка</h3>
 			<p class="mt-1 text-sm text-secondary">Обсуждаем задачу, фиксируем бюджет и сроки.</p>
 		</div>
 		<div>
-			<span class="text-sm font-medium text-accent">02</span>
+			<span class="text-md font-medium text-accent">02</span>
 			<h3 class="mt-2 font-semibold text-primary">Прототип</h3>
 			<p class="mt-1 text-sm text-secondary">Вы видите будущий сайт до начала разработки.</p>
 		</div>
 		<div>
-			<span class="text-sm font-medium text-accent">03</span>
+			<span class="text-md font-medium text-accent">03</span>
 			<h3 class="mt-2 font-semibold text-primary">Разработка</h3>
 			<p class="mt-1 text-sm text-secondary">
 				Промежуточные демонстрации — вы всегда в курсе прогресса.
 			</p>
 		</div>
 		<div>
-			<span class="text-sm font-medium text-accent">04</span>
+			<span class="text-md font-medium text-accent">04</span>
 			<h3 class="mt-2 font-semibold text-primary">Запуск</h3>
 			<p class="mt-1 text-sm text-secondary">
 				Публикация на ваш домен и сопровождение после старта.

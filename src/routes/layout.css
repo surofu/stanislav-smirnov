@@ -17,7 +17,7 @@
 	--color-secondary-dark: #1f2937;
 
 	/* accent */
-	--color-accent: oklch(59.6% 0.145 163.225); /* emerald-600 */
+	--color-accent: oklch(0.528 0.141 150.861); /* 	--color-accent: oklch(0.43 0.08 160.44); */
 	--color-accent-2: oklch(54% 0.130 164);
 
 	/* code — цвета для подсветки кода */
@@ -27,7 +27,7 @@
 }
 
 :root {
-	--bg-color: #f4f5f5;
+	--bg-color: #fefeff;
 	--text-color: #303030;
 	--grid-dot-color: oklch(86.9% 0.022 252.894);
 	color-scheme: light;

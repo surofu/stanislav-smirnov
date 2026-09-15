@@ -15,16 +15,12 @@
     <header class="mt-6 mb-8 sm:mt-8 sm:mb-12">
         <span class="tag inline-flex text-xs text-secondary-light">{PROJECT_CATEGORIES[meta.category]}</span>
         <h1 class="mt-6 text-2xl font-semibold text-primary sm:text-3xl">{meta.title}</h1>
-        {#if meta.description}
-            <p class="mt-3 text-base text-secondary">{meta.description}</p>
-        {/if}
-        {#if meta.stack?.length}
-            <div class="mt-4 flex flex-wrap gap-2 text-xs text-secondary">
-                {#each meta.stack as tech (tech)}
-                    <span class="rounded-full border border-slate-200 px-3 py-1 dark:border-slate-700">{tech}</span>
-                {/each}
-            </div>
-        {/if}
+        <p class="mt-3 text-base text-secondary">{meta.description}</p>
+        <div class="mt-4 flex flex-wrap gap-2 text-xs text-secondary">
+            {#each meta.stack as tech (tech)}
+                <span class="rounded-full border border-slate-200 px-3 py-1 dark:border-slate-700">{tech}</span>
+            {/each}
+        </div>
         {#if meta.link}
             <a href={meta.link as ResolvedPathname} target="_blank" rel="noopener noreferrer"
                class="app-button-primary mt-6 inline-flex">

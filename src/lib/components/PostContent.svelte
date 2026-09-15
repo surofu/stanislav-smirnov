@@ -17,9 +17,12 @@
 	<header class="mt-6 mb-8 sm:mt-8 sm:mb-12">
 		<span class="text-xs text-secondary-light">{formatter.format(new Date(meta.date))}</span>
 		<h1 class="mt-12 text-2xl font-semibold text-primary sm:text-3xl">{meta.title}</h1>
-		{#if meta.description}
-			<p class="mt-3 text-base text-secondary">{meta.description}</p>
-		{/if}
+		<p class="mt-3 text-base text-secondary">{meta.description}</p>
+		<div class="mt-4 flex flex-wrap gap-2 text-xs text-secondary">
+			{#each meta.tags as tag (tag)}
+				<span class="rounded-full border border-slate-200 px-3 py-1 dark:border-slate-700">{tag}</span>
+			{/each}
+		</div>
 	</header>
 	<div
 		class="prose prose-slate dark:prose-invert prose-headings:text-primary prose-a:text-accent prose-strong:text-primary prose-code:text-code-text prose-code:break-words max-w-none prose-pre:overflow-x-auto prose-table:block prose-table:overflow-x-auto prose-img:h-auto prose-img:w-full prose-img:rounded-lg lg:prose-lg break-words"
