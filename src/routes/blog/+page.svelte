@@ -2,6 +2,7 @@
 	import { resolve } from '$app/paths';
 	import { Seo } from '$lib';
 	import type { PageProps } from './$types';
+	import GridDots from "$lib/components/GridDots.svelte";
 
 	let { data }: PageProps = $props();
 
@@ -42,3 +43,5 @@
 		</ul>
 	{/if}
 </section>
+
+<GridDots />

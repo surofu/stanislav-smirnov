@@ -27,19 +27,19 @@
 }
 
 :root {
-	--bg-color: #fcfdfe;
+	--bg-color: #f4f5f5;
 	--text-color: #303030;
 	--grid-dot-color: oklch(86.9% 0.022 252.894);
 	color-scheme: light;
 }
 
 .dark {
-	--bg-color: #0b0f14;
+	--bg-color: #0e1018;
 	--text-color: #e5e7eb;
 	--grid-dot-color: oklch(28% 0.02 264deg);
 
 	--color-primary: oklch(98.4% 0.003 247.858);
-	--color-primary-bg: oklch(16% 0.012 264.695);
+	--color-primary-bg: oklch(0.171 0.019 274.524);
 	--color-primary-inverse: oklch(12.9% 0.042 264.695);
 	--color-secondary: #9ca3af;
 	--color-secondary-light: #6b7280;

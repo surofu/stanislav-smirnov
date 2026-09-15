@@ -2,6 +2,7 @@
     import {resolve} from '$app/paths';
     import {Seo} from '$lib';
     import type {PageProps} from './$types';
+    import GridDots from "$lib/components/GridDots.svelte";
 
     let {data}: PageProps = $props();
 
@@ -31,7 +32,7 @@
                         <li>
                             <a
                                     href={resolve('/projects/[slug]', { slug: project.slug })}
-                                    class="group flex h-full flex-col rounded-lg overflow-hidden border border-slate-200 bg-primary-bg transition-all hover:-translate-y-1 dark:border-slate-700"
+                                    class="group flex h-full flex-col rounded-lg overflow-hidden shadow-lg border border-slate-200 bg-primary-bg transition-all hover:-translate-y-1 dark:border-slate-700"
                             >
                                 {#if project.image}
                                     <img src="/images/projects/{project.image}" alt={project.title}/>
@@ -55,3 +56,5 @@
         {/each}
     {/if}
 </section>
+
+<GridDots />
