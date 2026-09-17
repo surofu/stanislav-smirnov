@@ -1,9 +1,9 @@
 <script lang="ts" module>
-    import { CodeBlock, PostImage, PostList } from '$lib';
+    import { CodeBlock, PostImage } from '$lib';
     import type { PostMeta } from '$lib/types';
 
     export const metadata: PostMeta = {
-        title: 'Лучшая связка для статических лендингов?',
+        title: '0$ за сайт в интернете',
         description:
             'Cloudflare Pages + SvelteKit static adapter + git push вместо CI/CD. DNS, CDN и хостинг — 0 рублей в месяц. Разбираю связку на примере своего сайта.',
         image: 'hosting-cloudflare-sveltekit/preview.avif',

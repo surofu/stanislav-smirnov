@@ -16,17 +16,17 @@ SvelteKit-проект без сервера — деплой на Cloudflare Pa
 - Посты блога — `.svelte`-компоненты, а не Markdown
 
 Подробный разбор связки — в посте блога:
-[`src/lib/posts/hosting-cloudflare-sveltekit.svelte`](src/lib/posts/hosting-cloudflare-sveltekit.svelte).
+[`src/lib/blog/hosting-cloudflare-sveltekit.svelte`](src/lib/blog/hosting-cloudflare-sveltekit.svelte).
 
 ## Структура
 
 ```
 src/
 ├── lib/
-│   ├── components/   # переиспользуемые компоненты (CodeBlock, PostImage, Navbar, Footer...)
+│   ├── components/    # переиспользуемые компоненты (CodeBlock, PostImage, Navbar, Footer...)
 │   ├── posts/         # посты блога как .svelte-компоненты
 │   ├── projects/      # кейсы проектов как .svelte-компоненты
-│   ├── posts.ts       # реестр постов
+│   ├── blog.ts        # реестр постов
 │   ├── projects.ts    # реестр проектов
 │   └── types.ts
 └── routes/

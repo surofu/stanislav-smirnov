@@ -1,6 +1,6 @@
 import type { PageLoad } from './$types';
 import { error } from '@sveltejs/kit';
-import { getAllPosts, getPostComponent } from '$lib/posts';
+import { getAllPosts, getPostComponent } from '$lib/blog';
 
 export const prerender = true;
 

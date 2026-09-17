@@ -4,8 +4,6 @@ export { default as Navbar } from './components/Navbar.svelte';
 export { default as Seo } from './components/Seo.svelte';
 export { default as ThemeToggle } from './components/ThemeToggle.svelte';
 export { default as CodeBlock } from './components/CodeBlock.svelte';
-export { default as PostContent } from './components/PostContent.svelte';
 export { default as PostTable } from './components/PostTable.svelte';
 export { default as PostImage } from './components/PostImage.svelte';
 export { default as PostList } from './components/PostList.svelte';
-export { default as ProjectContent } from './components/ProjectContent.svelte';

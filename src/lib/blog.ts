@@ -1,7 +1,7 @@
 import type { Component } from 'svelte';
 import type { PostModule, PostMeta } from './types';
 
-const modules = import.meta.glob<PostModule>('/src/lib/posts/*.svelte', { eager: true });
+const modules = import.meta.glob<PostModule>('/src/lib/blog/*.svelte', { eager: true });
 
 export interface Post extends PostMeta {
 	slug: string;
