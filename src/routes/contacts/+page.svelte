@@ -49,6 +49,7 @@
 <Seo
         title="Контакты"
         description="Свяжитесь со Stanislav Smirnov по email, Telegram, Instagram, LinkedIn или GitHub, чтобы обсудить разработку онлайн-магазина или CRM-системы для бизнеса."
+        keywords="контакты веб-разработчика, заказать интернет-магазин, заказать CRM-систему, связаться с разработчиком SvelteKit"
 />
 
 <section class="flex h-full w-full items-center justify-center">

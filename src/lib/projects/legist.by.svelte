@@ -9,7 +9,8 @@
         published: true,
         category: 'landing',
         link: 'https://legist.by',
-        stack: ['Deno', 'Fresh']
+        stack: ['Deno', 'Fresh'],
+        keywords: ['сайт коллегии адвокатов', 'лендинг юридической компании', 'имиджевый сайт-визитка', 'Deno Fresh SSR'],
     };
 </script>
 <script>

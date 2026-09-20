@@ -1,9 +1,21 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 
-	let { src, alt, caption }: { src: string; alt: string; caption?: string } = $props();
+	let {
+		src,
+		alt,
+		caption,
+		aspectRatio = 'auto'
+	}: { src: string; alt: string; caption?: string; aspectRatio?: string } = $props();
 
 	let zoomed = $state(false);
+
+	// ratio as width/height number; null = no cap (natural size)
+	let ratio = $derived.by(() => {
+		if (aspectRatio === 'auto') return null;
+		const [w, h] = aspectRatio.split('/').map(Number);
+		return w / h;
+	});
 
 	function toggleZoom() {
 		zoomed = !zoomed;
@@ -22,7 +34,8 @@
 
 <figure class="not-prose my-8">
 	<div
-			class="relative h-72 w-full overflow-hidden rounded-lg border border-slate-200 shadow-lg sm:h-96 lg:h-[28rem] dark:border-slate-700"
+			style="container-type: inline-size;"
+			class="relative w-full overflow-hidden rounded-lg border border-slate-200 shadow-lg dark:border-slate-700"
 	>
 		<img
 				{src}
@@ -36,10 +49,18 @@
 		<button
 				type="button"
 				onclick={toggleZoom}
-				class="absolute inset-0 h-full w-full cursor-zoom-in"
+				class="relative z-10 block w-full cursor-zoom-in"
 				aria-label="Открыть изображение на весь экран"
 		>
-			<img {src} {alt} loading="lazy" width="1200" height="600" class="relative z-10 h-full w-full object-contain" />
+			<img
+					{src}
+					{alt}
+					loading="lazy"
+					width="1200"
+					height="600"
+					style={ratio ? `max-height: calc(100cqw / ${ratio});` : ''}
+					class="h-auto w-full object-cover"
+			/>
 		</button>
 	</div>
 	{#if caption}

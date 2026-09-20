@@ -13,6 +13,7 @@ export interface PostMeta {
 	description: string;
 	image: string;
 	tags: string[];
+	keywords?: string[];
 	date: string;
 	published: boolean;
 }
@@ -48,4 +49,5 @@ export interface ProjectMeta {
 	category: ProjectCategory;
 	link?: string;
 	stack?: string[];
+	keywords?: string[];
 }

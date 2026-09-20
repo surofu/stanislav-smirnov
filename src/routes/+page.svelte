@@ -5,23 +5,24 @@
 </script>
 
 <Seo
-	title="Разработка сайта для вашего бизнеса от 300 BYN"
-	description="Разработка интернет-магазинов и CRM-систем для малого и среднего бизнеса от 300 BYN. Без посредников — от заявки до запуска."
+		title="Разработка онлайн-магазинов и CRM-систем"
+		description="Разработка интернет-магазинов и CRM-систем. Без посредников — от заявки до запуска."
+		keywords="разработка интернет-магазина, CRM-система под ключ, автоматизация учёта заказов, веб-разработчик для бизнеса, сайт на заказ, каталог товаров и приём онлайн-оплаты"
 />
 
 <section class="relative grid grid-cols-1 items-center gap-10 md:grid-cols-[1fr_auto] md:gap-16">
 	<div class="order-2 max-w-xl md:order-1">
 		<h1 class="text-3xl font-semibold tracking-tight text-primary md:text-4xl">
-			Разработка сайта для вашего бизнеса <span class="text-accent">от&nbsp;300&nbsp;BYN</span>
+			Разработка онлайн-магазинов и CRM-систем
 		</h1>
 		<h2 class="mt-4 text-base text-secondary md:text-lg">
 			<span class="text-accent">5 лет</span> разрабатываю и автоматизирую
 		</h2>
 		<div class="mt-6 flex flex-wrap gap-2 text-sm">
-			<span class="tag">приём онлайн-оплаты</span>
-			<span class="tag">учёт заказов</span>
 			<span class="tag">каталог товаров</span>
-			<span class="tag">CRM для клиентов</span>
+			<span class="tag">учёт заказов</span>
+			<span class="tag">приём онлайн-оплаты</span>
+			<span class="tag">учёт остатков</span>
 			<span class="tag">отчёты и аналитика</span>
 		</div>
 		<div class="mt-8 flex flex-wrap gap-4">

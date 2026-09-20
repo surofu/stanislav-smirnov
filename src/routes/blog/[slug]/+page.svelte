@@ -14,7 +14,13 @@
     });
 </script>
 
-<Seo title={meta.title} description={meta.description} type="article" />
+<Seo
+        title={meta.title}
+        description={meta.description}
+        keywords={(meta.keywords ?? meta.tags).join(', ')}
+        image="/images/blog/{meta.image}"
+        type="article"
+/>
 
 <article>
     <a href={resolve('/blog')} class="text-sm text-secondary transition-colors hover:text-accent">
@@ -22,7 +28,7 @@
     </a>
     <header class="mt-6 mb-8 sm:mt-8 sm:mb-12">
         <span class="text-xs text-secondary-light">{formatter.format(new Date(meta.date))}</span>
-        <PostImage src="/images/blog/{meta.image}" alt="Превью поста: {meta.title}" />
+        <PostImage src="/images/blog/{meta.image}" alt="Превью поста: {meta.title}" aspectRatio="2/1" />
         <h1 class="mt-12 text-2xl font-semibold text-primary sm:text-3xl">{meta.title}</h1>
         <p class="mt-3 text-base text-secondary">{meta.description}</p>
         <div class="mt-4 flex flex-wrap gap-2 text-xs text-secondary">

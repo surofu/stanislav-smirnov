@@ -8,6 +8,7 @@
             'Cloudflare Pages + SvelteKit static adapter + git push вместо CI/CD. DNS, CDN и хостинг — 0 рублей в месяц. Разбираю связку на примере своего сайта.',
         image: 'hosting-cloudflare-sveltekit/preview.avif',
         tags: ['Cloudflare', 'SvelteKit'],
+        keywords: ['Cloudflare Pages', 'SvelteKit adapter-static', 'бесплатный хостинг сайта', 'автодеплой без CI/CD', 'статический сайт'],
         date: '2026-09-15',
         published: true
     };

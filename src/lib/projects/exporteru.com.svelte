@@ -9,7 +9,8 @@
         published: true,
         category: 'shop',
         link: 'https://exporteru.com',
-        stack: ['Java', 'Spring Boot', 'PostgreSQL', 'NextJs']
+        stack: ['Java', 'Spring Boot', 'PostgreSQL', 'NextJs'],
+        keywords: ['B2B площадка оптовой торговли', 'маркетплейс стройматериалов', 'мультиязычный сайт', 'личный кабинет продавца и покупателя'],
     };
 </script>
 <script>

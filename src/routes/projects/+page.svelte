@@ -14,12 +14,12 @@
 
 <Seo
         title="Проекты"
-        description="Примеры работ: сайты, интернет-магазины, CRM-системы."
+        description="Примеры работ: Лендинги, интернет-магазины, CRM-системы."
+        keywords="портфолио веб-разработчика, примеры интернет-магазинов, кейсы CRM-систем, разработка лендингов на заказ"
 />
 
 <section>
     <h1 class="text-2xl font-bold tracking-tight text-primary sm:text-3xl">Проекты</h1>
-    <p class="mt-2 text-secondary">Примеры работ по категориям.</p>
 
     {#if data.groups.length === 0}
         <p class="mt-12 text-secondary">Пока нет ни одного проекта — загляните позже.</p>

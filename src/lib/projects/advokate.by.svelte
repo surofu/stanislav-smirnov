@@ -11,6 +11,7 @@
         category: 'landing',
         link: 'https://advokate.site',
         stack: ['Html', 'Css', 'Javascript'],
+        keywords: ['сайт адвоката', 'лендинг для юриста', 'персональный сайт-визитка', 'верстка HTML CSS JS без фреймворков'],
     };
 </script>
 

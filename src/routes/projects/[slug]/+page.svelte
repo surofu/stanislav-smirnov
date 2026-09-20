@@ -9,7 +9,13 @@
     let meta = $derived(data.meta);
 </script>
 
-<Seo title={meta.title} description={meta.description} type="article"/>
+<Seo
+        title={meta.title}
+        description={meta.description}
+        keywords={(meta.keywords ?? [...(meta.stack ?? []), PROJECT_CATEGORIES[meta.category]]).join(', ')}
+        image="/images/projects/{meta.image}"
+        type="article"
+/>
 
 <article>
     <a href={resolve('/projects')} class="text-sm text-secondary transition-colors hover:text-accent">

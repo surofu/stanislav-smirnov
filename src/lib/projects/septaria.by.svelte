@@ -9,7 +9,8 @@
         published: true,
         category: 'shop',
         link: 'https://septaria.by',
-        stack: ['Java', 'Spring Boot', 'PostgreSQL', 'NextJs']
+        stack: ['Java', 'Spring Boot', 'PostgreSQL', 'NextJs'],
+        keywords: ['интернет-магазин украшений', 'магазин бижутерии онлайн', 'мультивалютный интернет-магазин', 'каталог с фильтрами и бронированием'],
     };
 </script>
 <script>
